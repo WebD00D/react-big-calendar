@@ -52,7 +52,7 @@ export function mergeWithDefaults(
   return {
     ...localizer,
     messages,
-    startOfWeek: () => localizer.startOfWeek(culture),
+    startOfWeek: () => localizer && localizer.startOfWeek(culture),
     format: (value, format) =>
       localizer && localizer.format(value, formats[format] || format, culture),
   }
